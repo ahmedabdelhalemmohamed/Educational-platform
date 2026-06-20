@@ -42,6 +42,7 @@ function App() {
 
   console.log(profiles);
 
+  
   const sendToSupabase = async () => {
     const {data, error} = await supabase.from("profiles").insert({
       name: input
