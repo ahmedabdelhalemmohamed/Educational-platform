@@ -27,6 +27,7 @@
 
 import { useEffect, useState } from "react"
 import { supabase } from "./supabase"
+import { Login } from "./pages/Login"
 
 type Profile = {
   id: number,
@@ -103,12 +104,14 @@ function App() {
 
   return (
     <>
-      {profiles.map(profile => (
+      {/* {profiles.map(profile => (
         <div key={profile.id}>{profile.name}</div>
       ))}
 
       <input type="text" value={input} onChange={(e) => setInput(e.target.value)} className="border-2 border-red-500"/>
-      <button  onClick={sendToSupabase}>Add</button>
+      <button  onClick={sendToSupabase}>Add</button> */}
+
+      <Login />
     </>
   )
 }
