@@ -4,17 +4,30 @@ export  const Login = () => {
 
 
 const handleGoogleLogin = async () => {
+  // try {
+  //   const { error } = await supabase.auth.signInWithOAuth({
+  //     provider: 'google',
+  //     options: {
+  //       // المكان اللي الطالب هيروح عليه أوتوماتيك أول ما يسجل بجوجل بنجاح
+  //       redirectTo: 'http://localhost:5173', 
+  //     },
+  //   });
+
+  //   if (error) throw error;
+  // } catch (error) {
+  //   console.error('حدث خطأ أثناء تسجيل الدخول بجوجل:', error);
+  // }
+
   try {
-    const { error } = await supabase.auth.signInWithOAuth({
+    const {error} = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        // المكان اللي الطالب هيروح عليه أوتوماتيك أول ما يسجل بجوجل بنجاح
-        redirectTo: 'http://localhost:5173/dashboard', 
-      },
+        redirectTo: "http://localhost:5173"
+      }
     });
 
-    if (error) throw error;
-  } catch (error) {
+    if(error) throw error
+  } catch(error) {
     console.error('حدث خطأ أثناء تسجيل الدخول بجوجل:', error);
   }
 };
